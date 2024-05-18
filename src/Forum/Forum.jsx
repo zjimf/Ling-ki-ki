@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Extension from "./Extension";
 import Discuss from "./Discuss";
-import Popup from "reactjs-popup";
+
 const Forum = () => {
   const [currentTab, setCurrentTab] = useState(0);
 

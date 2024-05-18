@@ -6,7 +6,6 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import TuneIcon from "@mui/icons-material/Tune";
 
 const BottomNav = ({ activeTab, setActiveTab }) => {
-  console.log(activeTab);
   return (
     <Box
       sx={{

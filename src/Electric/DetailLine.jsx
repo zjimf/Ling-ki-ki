@@ -11,7 +11,7 @@ const DetailLine = () => {
     <Box
       sx={{
         width: "90vw",
-        height: "68vh",
+        height: "75vh",
         backgroundColor: "white",
         marginTop: "10px",
         borderRadius: "10px",
@@ -85,7 +85,16 @@ const DetailLine = () => {
           想獲得更多資訊，點選左上角機器人詢問
         </Alert>
       )}
-
+      <Typography
+        sx={{
+          width: "90vw",
+          textAlign: "center",
+          color: "#747474",
+          marginTop: "20px",
+        }}
+      >
+        累積電費圖
+      </Typography>
       <LineChart
         xAxis={[
           {

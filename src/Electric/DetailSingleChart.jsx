@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { Box } from "@mui/material";
+import Tooltip from "@mui/material/Tooltip";
 
 const DetailSingleChart = ({ width, percent, name }) => {
   const [open, setOpen] = React.useState(false);
@@ -39,7 +39,8 @@ const DetailSingleChart = ({ width, percent, name }) => {
           sx={{
             width: width,
             height: "20px",
-            backgroundColor: "#02d5d1",
+            backgroundColor: "#BDA7E2",
+            borderRadius: "0 7px 7px 0",
             position: "absolute",
           }}
         />
