@@ -4,7 +4,29 @@ import CloseIcon from "@mui/icons-material/Close";
 import NotifyMsg from "./NotifyMsg";
 
 const Notify = ({ handleClose }) => {
+  const loaded = sessionStorage.getItem("extension");
+
   const data = [
+    {
+      title: "節能提醒助手",
+      des: "偵測到「冷氣A」已開啟四個小時，建議您可以關閉冷氣，讓它休息一陣子！...",
+      image: 2,
+      time: "2024/05/17 16:10",
+    },
+    {
+      title: "滿意度調查",
+      des: "睡得還好嗎？對於本次的智慧省電睡眠體驗感受如何呢，協助我們填寫一下滿意度問卷吧！...",
+      image: 3,
+      time: "2024/05/16 15:10",
+    },
+    {
+      title: "智慧節能定位",
+      des: "GPS 定位偵測您已離開住所，將在5分鐘後關閉室內所有裝置。...",
+      image: 2,
+      time: "2024/05/16 15:10",
+    },
+  ];
+  const data2 = [
     {
       title: "Líng-ki-ki",
       des: "又到了讓氣氛 Cool-down 的時間了，準備好了嗎？「什麼時候二加一會不等於三？ 算錯的時候！」",
@@ -62,14 +84,24 @@ const Notify = ({ handleClose }) => {
         </Typography>
         <CloseIcon onClick={handleClose} />
       </Box>
-      {data.map((item) => (
-        <NotifyMsg
-          title={item.title}
-          des={item.des}
-          image={item.image}
-          time={item.time}
-        />
-      ))}
+
+      {loaded === "loaded"
+        ? data2.map((item) => (
+            <NotifyMsg
+              title={item.title}
+              des={item.des}
+              image={item.image}
+              time={item.time}
+            />
+          ))
+        : data.map((item) => (
+            <NotifyMsg
+              title={item.title}
+              des={item.des}
+              image={item.image}
+              time={item.time}
+            />
+          ))}
     </Box>
   );
 };

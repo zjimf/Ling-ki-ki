@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "react-chat-elements/dist/main.css";
 import { MessageList } from "react-chat-elements";
 import { Box } from "@mui/material";
 import Nav from "../Public/Components/ChatNav/Nav";
 import SendBox from "./SendBox";
+import "react-chat-elements/dist/main.css";
 import SettingBox from "./SettingBox";
 
 const ChatBot = ({ setActiveTab }) => {

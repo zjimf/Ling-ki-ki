@@ -5,7 +5,9 @@ import Alert from "@mui/material/Alert";
 import Input from "@mui/material/Input";
 import FormControl from "@mui/material/FormControl";
 const DetailLine = () => {
-  const [value, setValue] = React.useState(null);
+  const [value, setValue] = React.useState(
+    sessionStorage.getItem("electricValue")
+  );
 
   return (
     <Box
@@ -63,8 +65,12 @@ const DetailLine = () => {
           </Typography>
           <FormControl sx={{ mx: 1, width: "68px" }} variant="standard">
             <Input
+              defaultValue={value}
               id="standard-adornment-amount"
-              onChange={(e) => setValue(e.target.value)}
+              onChange={(e) => {
+                setValue(e.target.value);
+                sessionStorage.setItem("electricValue", e.target.value);
+              }}
               sx={{ fontSize: "30px", fontWeight: "bold" }}
             />
           </FormControl>

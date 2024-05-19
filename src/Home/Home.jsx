@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../Public/Components/Nav/Nav";
 import { Box } from "@mui/material";
 import WeatherBlock from "./WeatherBlock/WeatherBlock";
 import DeviceBlock from "./Device/DeviceBlock";

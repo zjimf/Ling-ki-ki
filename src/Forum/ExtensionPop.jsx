@@ -12,6 +12,7 @@ const ExtensionPop = ({ imageTarget, title }) => {
   const [uninstallDisabled, setUninstallDisabled] = useState(true);
 
   const handleDownload = () => {
+    sessionStorage.setItem("extension", "loaded");
     setDownloadState("downloading");
     setTimeout(() => {
       setDownloadState("downloaded");

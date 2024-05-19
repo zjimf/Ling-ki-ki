@@ -34,7 +34,7 @@ const Nav = ({ setActiveTab }) => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-between",
             alignItem: "center",
             padding: "20px",
           }}

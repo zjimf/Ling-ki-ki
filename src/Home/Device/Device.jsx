@@ -3,10 +3,22 @@ import { Box, Typography } from "@mui/material";
 import airConditioner from "./images/1.png";
 import dehumidifier from "./images/2.png";
 import washingMachine from "./images/3.png";
+import "../Home.css";
 
 const Device = ({ name, where, image, setting, status }) => {
+  const isOperating = status[0] === "運轉中";
   let imageToShow;
-
+  let textStyle = {
+    color: status[1],
+    fontSize: "14px",
+    fontWeight: "bold",
+  };
+  if (isOperating) {
+    textStyle = {
+      ...textStyle,
+      animation: "blinker 3s linear infinite",
+    };
+  }
   switch (image) {
     case "1":
       imageToShow = airConditioner;
@@ -43,7 +55,7 @@ const Device = ({ name, where, image, setting, status }) => {
           flexDirection: "column",
         }}
       >
-        <Typography>{name}</Typography>
+        <Typography sx={{ fontSize: "14px" }}>{name}</Typography>
         <Box
           component="img"
           sx={{
@@ -67,6 +79,7 @@ const Device = ({ name, where, image, setting, status }) => {
             backgroundColor: "#F3F3F3",
             paddingX: "10px",
             borderRadius: "10px",
+            fontSize: "14px",
           }}
         >
           {where}
@@ -86,7 +99,7 @@ const Device = ({ name, where, image, setting, status }) => {
             度
           </span>
         </Typography>
-        <Typography sx={{ color: status[1] }}>{status[0]}</Typography>
+        <Typography sx={textStyle}>{status[0]}</Typography>
       </Box>
     </Box>
   );

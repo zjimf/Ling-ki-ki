@@ -10,6 +10,7 @@ import image2 from "./images/image2.png";
 import Switch from "@mui/material/Switch";
 
 const Self = () => {
+  const loaded = sessionStorage.getItem("extension");
   const [mode, setMode] = useState("最節省");
 
   const handleChange = (event) => {
@@ -19,7 +20,6 @@ const Self = () => {
     <Box
       sx={{
         width: "100vw",
-        // height: "80vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -84,7 +84,7 @@ const Self = () => {
         <Typography
           sx={{
             fontSize: "15px",
-            margin: "50px 0 5px 10px",
+            margin: "50px 0 5px 8px",
             color: "#797979",
             marginBottom: "10px",
           }}
@@ -101,35 +101,39 @@ const Self = () => {
             flexDirection: "column",
           }}
         >
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            sx={{ paddingY: "10px" }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-                marginLeft: "15px",
-              }}
+          {loaded === "loaded" ? (
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+              sx={{ paddingY: "10px" }}
             >
               <Box
-                component="img"
                 sx={{
-                  height: 40,
-                  width: 40,
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginLeft: "15px",
                 }}
-                src={image1}
-              />
-              <Typography sx={{ marginLeft: "15px", fontWeight: "bold" }}>
-                Líng-ki-ki 
-              </Typography>
-            </Box>
-            <Switch defaultChecked sx={{ marginRight: "15px" }} />
-          </Stack>
+              >
+                <Box
+                  component="img"
+                  sx={{
+                    height: 40,
+                    width: 40,
+                  }}
+                  src={image1}
+                />
+                <Typography sx={{ marginLeft: "15px", fontWeight: "bold" }}>
+                  Líng-ki-ki 
+                </Typography>
+              </Box>
+              <Switch defaultChecked sx={{ marginRight: "15px" }} />
+            </Stack>
+          ) : (
+            ""
+          )}
           <Stack
             direction="row"
             justifyContent="space-between"
