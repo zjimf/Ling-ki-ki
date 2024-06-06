@@ -5,7 +5,7 @@
 
 ### Competition
 
-AIWave: Taiwan Generative AI Applications Hackathon（）
+AIWave: Taiwan Generative AI Applications Hackathon（AWS）
 
 [Link](https://www.digitimes.com.tw/seminar/Hackathon_20240518/)
 
